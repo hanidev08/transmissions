@@ -10,12 +10,12 @@ const Hero = () => {
             <span>&nbsp;Transim</span>
             <span>Issions</span>
           </h1>
-          <div className="absolute top-[20%] lg:top-[-10%] max-w-[250px] max-h-[250px] lg:max-w-[500px] lg:max-h-[500px] ">
+          <div className="absolute top-[20%] lg:top-[-10%] max-w-[250px] max-h-[250px] lg:max-w-[400px] lg:max-h-[400px] ">
             <Image src={one} alt="ong" className=" size-full" />
           </div>
         </div>
-        <div className="flex justify-center items-center w-full max-w-[300px] md:max-w-[400px] lg:max-w-[500px] mx-auto z-30">
-          <p className=" text-sm md:text-xl lg:text-2xl text-center ">
+        <div className="flex justify-center items-center w-full max-w-[300px] md:max-w-[400px] lg:max-w-[500px] mx-auto z-30 bg-white">
+          <p className=" text-sm md:text-xl lg:text-2xl text-center mix-blend-difference text-white z-20">
             An education project around the legacy of Cristobal Balenciaga
           </p>
         </div>
