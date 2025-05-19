@@ -1,3 +1,11 @@
+import Header from "@/sections/Header";
+import Hero from "@/sections/Hero";
+
 export default function Home() {
-  return <div>Hello World</div>;
+  return (
+    <>
+      <Header />
+      <Hero />
+    </>
+  );
 }

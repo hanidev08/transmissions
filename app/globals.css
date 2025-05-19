@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-sm: 768px;
+  --breakpoint-sm: 1200px;
+  --font-ibmPlex-sans: "ibmPlexSans";
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem /* 16px */;
+    padding-left: 1rem /* 16px */;
+  }
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1200px;
+      padding-right: 2rem /* 32px */;
+      padding-left: 2rem /* 32px */;
+    }
+  }
+}
