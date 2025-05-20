@@ -5,6 +5,7 @@
   --breakpoint-sm: 768px;
   --breakpoint-sm: 1200px;
   --font-ibmPlex-sans: "ibmPlexSans";
+  --font-cormorant-sans: "cormorantSans";
 }
 
 @layer components {

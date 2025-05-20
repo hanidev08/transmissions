@@ -26,7 +26,7 @@ const Hero = () => {
     <section>
       <div className="container overflow-hidden">
         <div className=" h-[calc(85vh-56px)] md:h-[calc(90vh-64px)] flex items-center justify-center relative bg-white">
-          <h1 className=" text-7xl md:text-8xl lg:text-9xl uppercase flex flex-col mix-blend-difference text-white z-20">
+          <h1 className=" text-7xl md:text-8xl lg:text-9xl uppercase flex flex-col mix-blend-difference text-white z-10">
             <span>&nbsp;Transim</span>
             <span>Issions</span>
           </h1>
@@ -47,7 +47,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex justify-center items-center w-full max-w-[300px] md:max-w-[400px] lg:max-w-[500px] mx-auto z-30 bg-white">
-          <p className=" text-sm md:text-xl lg:text-2xl text-center mix-blend-difference text-white z-20">
+          <p className=" text-sm md:text-xl lg:text-2xl text-center mix-blend-difference text-white z-10">
             An education project around the legacy of Cristobal Balenciaga
           </p>
         </div>

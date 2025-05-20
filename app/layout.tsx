@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Sans, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibmPlex-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const cormorantSans = Cormorant_Garamond({
+  variable: "--font-cormorant-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 });
@@ -20,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexSans.variable} antialiased font-ibmPlex-sans`}>
+      <body
+        className={`${ibmPlexSans.variable} ${cormorantSans.variable} antialiased font-ibmPlex-sans`}
+      >
         {children}
       </body>
     </html>
