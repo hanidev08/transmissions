@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/Button";
 import { motion, useAnimate, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -9,11 +10,11 @@ const navItems = [
   },
   {
     label: "Portfolio",
-    href: "#portfolio",
+    href: "portfolio",
   },
   {
     label: "About",
-    href: "#About",
+    href: "about",
   },
 ];
 const slideUp = {
@@ -27,6 +28,20 @@ const slideUp = {
   closed: {
     y: "100%",
     transition: { duration: 0.5 },
+  },
+};
+
+const opacity = {
+  initial: {
+    opacity: 0,
+  },
+  open: {
+    opacity: 1,
+    transition: { duration: 7 },
+  },
+  closed: {
+    opacity: 0,
+    transition: { duration: 7 },
   },
 };
 
@@ -63,35 +78,24 @@ const Header = () => {
       "
         ref={navScope}
       >
-        <div className=" container h-full flex flex-col justify-between">
-          <nav className="mt-20" ref={description}>
+        <div className=" container h-full flex flex-col justify-between relative">
+          <nav className="mt-20 md:mt-30" ref={description}>
             {navItems.map(({ label, href }) => (
-              <a
-                href={href}
+              <div
                 key={label}
                 className=" text-white relative flex flex-col overflow-hidden"
+                onClick={() => {
+                  setIsActive(false);
+                }}
               >
                 <motion.span
                   variants={slideUp}
                   animate={isInView ? "open" : "closed"}
                   className=" text-5xl lg:text-6xl  flex items-start justify-start "
                 >
-                  <div className="group cursor-pointer relative overflow-hidden [perspective:800px] text-white flex items-center justify-center">
-                    <p
-                      className="transition-all duration-[1200ms] [transition-timing-function:cubic-bezier(0.76,0,0.24,1)] 
-              group-hover:[transform:rotateX(90deg)] group-hover:opacity-0 [transform-origin:top_center]"
-                    >
-                      {label}
-                    </p>
-                    <p
-                      className="font-cormorant-sans italic absolute transition-all duration-[1200ms] [transition-timing-function:cubic-bezier(0.76,0,0.24,1)]
-               opacity-0 group-hover:opacity-100 group-hover:[transform:rotateX(0deg)_translateY(0)] [transform:rotateX(-90deg)_translateY(9px)] [transform-origin:bottom_center]"
-                    >
-                      {label}
-                    </p>
-                  </div>
+                  <Button text={label} href={href} />
                 </motion.span>
-              </a>
+              </div>
             ))}
           </nav>
           <div className=" mb-5 font-semibold">
@@ -100,6 +104,17 @@ const Header = () => {
               <li>Discover the Museum</li>
               <li>Dark Mode</li>
             </ul>
+          </div>
+          <div className=" hidden lg:block absolute right-0 bottom-0">
+            <motion.h1
+              variants={opacity}
+              initial="initial"
+              animate={isInView ? "open" : "closed"}
+              className=" lg:text-9xl uppercase flex flex-col  text-white"
+            >
+              <span>&nbsp;Transim</span>
+              <span>Issions</span>
+            </motion.h1>
           </div>
         </div>
       </div>

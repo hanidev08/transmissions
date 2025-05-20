@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, Cormorant_Garamond } from "next/font/google";
+import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
+import Header from "@/sections/Header";
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibmPlex-sans",
@@ -25,12 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${ibmPlexSans.variable} ${cormorantSans.variable} antialiased font-ibmPlex-sans`}
-      >
-        {children}
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body
+          className={`${ibmPlexSans.variable} ${cormorantSans.variable} antialiased font-ibmPlex-sans`}
+        >
+          <Header />
+          {children}
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

@@ -18,7 +18,7 @@ const Hero = () => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 3000);
-
+ 
     return () => clearInterval(interval);
   }, []);
 
@@ -31,7 +31,7 @@ const Hero = () => {
             <span>Issions</span>
           </h1>
           <div className="absolute top-[20%] lg:top-[0%]">
-            <div className="relative w-[250px] h-[350px] lg:w-[500px] lg:h-[700px]">
+            <div className="relative w-[250px] h-[350px] lg:w-[500px] lg:h-[500px]">
               {images.map((src, index) => (
                 <motion.img
                   key={index}
