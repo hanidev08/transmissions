@@ -113,7 +113,7 @@ function App() {
   return (
     <div
       ref={sliderRef}
-      className={`flex h-[calc(100vh-56px)] lg:h-[calc(100vh-64px)] w-full items-center select-none touch-none transition-transform duration-75 ease-out ${
+      className={`flex items-center bg-red-600 h-screen  select-none touch-none transition-transform duration-75 ease-out ${
         grabbing ? "cursor-grabbing" : "cursor-grab"
       }`}
       style={{ transform: "translate3d(0,0,0)" }}
