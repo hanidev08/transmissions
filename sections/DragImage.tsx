@@ -125,7 +125,7 @@ function App() {
         >
           <div className="relative w-[50%] pt-[40%] lg:pt-[70%] cursor-pointer">
             <Link
-              href={`/portfolio/${item.slug}`}
+              href={item.slug}
               onClick={(e) => {
                 if (state.current.clickPrevented) {
                   e.preventDefault(); // ✅ لا تفتح الرابط عند السحب
