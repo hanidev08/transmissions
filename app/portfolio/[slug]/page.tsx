@@ -6,7 +6,14 @@ function getPageData(slug: string) {
   return data.find((sample) => sample.slug === slug);
 }
 
-const Page = ({ params }: { params: { slug: string } }) => {
+// تعريف نوع البيانات المتوقع من Next.js
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+const Page = ({ params }: PageProps) => {
   const dataImg = getPageData(params.slug);
 
   if (!dataImg) return <div>Not found</div>;
@@ -16,7 +23,9 @@ const Page = ({ params }: { params: { slug: string } }) => {
       <Image
         src={dataImg.url}
         alt="Image"
-        className="w-[350px] h-[350px] object-cover"
+        width={350}
+        height={350}
+        className="object-cover"
       />
     </div>
   );
