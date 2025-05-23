@@ -6,13 +6,14 @@ function getPageData(slug: string) {
   return data.find((sample) => sample.slug === slug);
 }
 
-// تعريف نوع البيانات المتوقع من Next.js
+// النوع الصحيح للـ props
 interface PageProps {
   params: {
     slug: string;
   };
 }
 
+// لا تكتب Promise هنا أبداً ❌
 const Page = ({ params }: PageProps) => {
   const dataImg = getPageData(params.slug);
 
