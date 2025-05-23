@@ -1,28 +1,18 @@
 import { data } from "@/data";
 import Image from "next/image";
-import React from "react";
+import { notFound } from "next/navigation";
 
-// ✅ تعريف نوع props
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-// ✅ دالة تبحث عن العنصر المناسب بناءً على slug
 function getPageData(slug: string) {
-  return data.find((sample) => sample.slug === slug);
+  return data.find((item) => item.slug === slug);
 }
 
-// ✅ دالة صفحة async حسب متطلبات Next.js
-const Page = async ({ params }: PageProps) => {
-  const dataImg = getPageData(params.slug);
+// params هنا متوقع أن يكون Promise<{ slug: string }>
+const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const resolvedParams = await params; // انتظر params
+  const slug = resolvedParams.slug;
 
-  if (!dataImg) {
-    return (
-      <div className="p-10 text-center text-red-500">الصورة غير موجودة</div>
-    );
-  }
+  const dataImg = getPageData(slug);
+  if (!dataImg) return notFound();
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-white">
