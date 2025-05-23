@@ -1,9 +1,12 @@
 import Hero from "@/sections/Hero";
+import React from "react";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Hero />
     </>
   );
-}
+};
+
+export default Home;
