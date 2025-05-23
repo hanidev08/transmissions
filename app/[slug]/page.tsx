@@ -15,13 +15,11 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   if (!dataImg) return notFound();
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white">
+    <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <Image
         src={dataImg.url}
         alt={dataImg.text || "Image"}
-        width={500}
-        height={500}
-        className="object-cover rounded-lg shadow-md"
+        className="object-cover w-[200px] h-[200px] md:w-[400px] lg:h-[400px] rounded-lg shadow-md"
       />
     </div>
   );
